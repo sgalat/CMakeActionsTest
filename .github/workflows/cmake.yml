@@ -17,3 +17,12 @@ jobs:
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build
+
+    - uses: actions/upload-artifact@v2
+      with:
+        path: build/CMakeActionsTest
+
+    - uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        path: build/Debug/CMakeActionsTest.exe
