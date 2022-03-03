@@ -1,0 +1,17 @@
+name: Python
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Python Default
+      run: python --version
+
+    - name: Python v2
+      run: python2 --version
+
+    - name: Python v3
+      run: python3 --version
