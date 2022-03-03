@@ -1,0 +1,11 @@
+name: Feature
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Echo
+      run: echo "Feature workflow completed!"
