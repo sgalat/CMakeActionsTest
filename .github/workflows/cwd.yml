@@ -1,0 +1,41 @@
+name: Current Working Directory
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: CWD Initial
+      run: pwd
+
+    - name: Make Dir
+      run: |
+        echo "Creating temp dir"
+        mkdir temp
+
+    - name: CD
+      run: |
+        echo "Checking current dir"
+        pwd
+        echo "Changin dir to temp"
+        cd temp
+        echo "Checking current dir after cd"
+        pwd
+
+    - name: CWD after CD
+      run: |
+        echo "Current dir after CD in previous step"
+        pwd
+
+    - name: Working Dir - Temp
+      working-directory: temp
+      run: |
+        echo "Checking current dir with working dir set to temp"
+        pwd
+
+    - name: Working Dir - Root
+      run: |
+        echo "Checking current dir with working dir not set"
+        pwd
