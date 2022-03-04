@@ -1,0 +1,11 @@
+name: Git CLI
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git CLI
+      run: git --version
